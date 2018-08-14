@@ -30,7 +30,10 @@ public class RpiWebcam implements WebcamDevice {
 	@Override
 	public Dimension[] getResolutions() {
 		return new Dimension[] {
-				new Dimension(640, 480)
+				new Dimension(640, 480),
+				new Dimension(1280, 720),
+				new Dimension(1920, 1080),
+				new Dimension(3280, 2464),
 		};
 	}
 
@@ -41,7 +44,8 @@ public class RpiWebcam implements WebcamDevice {
 
 	@Override
 	public void setResolution(Dimension size) {
-		// TODO Auto-generated method stub
+		piCamera.setWidth(size.width);
+		piCamera.setHeight(size.height);
 
 	}
 
