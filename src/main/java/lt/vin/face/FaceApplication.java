@@ -26,10 +26,10 @@ public class FaceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//Webcam.setDriver(RpiDriver.class);
+		Webcam.setDriver(RpiDriver.class);
 		Webcam webcam = Webcam.getDefault();
 		
-		//webcam.setViewSize(new Dimension(3280, 2464));
+		webcam.setViewSize(new Dimension(3280, 2464));
 		webcam.open();
 		BufferedImage bim = webcam.getImage();
 		ImageIO.write(bim, "PNG", new File("hello-world.png"));
