@@ -23,10 +23,17 @@ repositories {
 	mavenCentral()
 }
 
+configurations.all {
+ resolutionStrategy {
+  force "com.nativelibs4java:bridj:0.6.2"
+ }
+ }
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+	
 	compile group: 'com.github.sarxos', name: 'webcam-capture', version: '0.3.12'
+	compile group: 'com.nativelibs4java', name: 'bridj', version: '0.6.2'
 
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compileOnly('org.projectlombok:lombok')
