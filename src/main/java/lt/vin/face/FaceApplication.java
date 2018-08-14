@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.github.sarxos.webcam.Webcam;
+import com.hopding.jrpicam.RPiCamera;
 
 @SpringBootApplication
 public class FaceApplication implements CommandLineRunner {
@@ -19,8 +20,10 @@ public class FaceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		Webcam.setDriver(RpiDriver.class);
 		Webcam webcam = Webcam.getDefault();
 		webcam.open();
 		ImageIO.write(webcam.getImage(), "PNG", new File("hello-world.png"));
+		
 	}
 }

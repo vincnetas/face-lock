@@ -34,6 +34,7 @@ dependencies {
 	
 	compile group: 'com.github.sarxos', name: 'webcam-capture', version: '0.3.12'
 	compile group: 'com.nativelibs4java', name: 'bridj', version: '0.6.2'
+	compile group: 'de.sciss', name: 'jrpicam', version: '0.1.0'
 
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compileOnly('org.projectlombok:lombok')
